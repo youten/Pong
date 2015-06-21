@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Game : MonoBehaviour {
-	private static float MAX_X = 7.5f;
+	public static float MAX_ME_X = 7.5f;
 	private GameObject ballPrefab;
 	private GameObject ball;
 
@@ -16,12 +16,12 @@ public class Game : MonoBehaviour {
 	void Update () {
 		// key
 		if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) {
-			if (-MAX_X < transform.position.x) {
+			if (-MAX_ME_X < transform.position.x) {
 				transform.Translate(Vector3.left * 0.2f);
 			}
 		}
 		if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) {
-			if (transform.position.x < MAX_X) {
+			if (transform.position.x < MAX_ME_X) {
 				transform.Translate(Vector3.right * 0.2f);
 			}
 		}
@@ -47,7 +47,7 @@ public class Game : MonoBehaviour {
 
 		Rigidbody rb = ball.GetComponent<Rigidbody> ();
 		if (rb != null) {
-			rb.velocity = new Vector3(Random.Range (-10.0f, 10.0f), // x
+			rb.velocity = new Vector3(Random.Range (-5.0f, 5.0f), // x
 			            0,                          // y
 			            10.0f);                     // z
 		}
