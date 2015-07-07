@@ -18,9 +18,15 @@ public class MeHead : MonoBehaviour {
 		} else if (Game.MAX_ME_X < posX) {
 			posX = Game.MAX_ME_X;
 		}
-		MeObject.transform.position = new Vector3 (posX,
-		                                           MeObject.transform.position.y,
-		                                           MeObject.transform.position.z);
-
+		// move bar
+		MeObject.transform.position =
+			new Vector3 (posX,
+			             MeObject.transform.position.y,
+			             MeObject.transform.position.z);
+		// move camera
+		transform.position = 
+			new Vector3 (posX / 2.0f,
+			             transform.position.y,
+			             transform.position.z);
 	}
 }
