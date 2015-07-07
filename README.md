@@ -2,7 +2,7 @@
 
 Pong-like Unity app using Google Cardboard SDK Sample.
 
-- Unity 5.1.0p1 2015.06.12
+- Unity 5.1.1p3
 - https://unity3d.com/jp/unity/qa/patch-releases
 - Cardboard SDK for Unity v0.5
 - https://developers.google.com/cardboard/unity/release-notes

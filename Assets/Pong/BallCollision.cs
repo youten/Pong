@@ -4,6 +4,7 @@ using System.Collections;
 public class BallCollision : MonoBehaviour {
 
 	void OnCollisionEnter (Collision col) {
+		playBoundSe ();
 		if (col.gameObject.name == "Me") {
 			Rigidbody rb = GetComponent<Rigidbody> ();
 			if (rb != null) {
@@ -19,5 +20,9 @@ public class BallCollision : MonoBehaviour {
 				}
 			}
 		}
+	}
+
+	void playBoundSe() {
+		Singleton<SePlayer>.instance.play ("mi");
 	}
 }

@@ -28,6 +28,7 @@ public class Game : MonoBehaviour {
 	}
 
 	void startGame () {
+		Singleton<SePlayer>.instance.play ("op");
 		generateBall ();
 	}
 
