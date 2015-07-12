@@ -1,10 +1,12 @@
-﻿// Head Tracking Script for Cardboard
+﻿// Head Tracking Script for Gear VR
 using UnityEngine;
+using UnityEngine.VR; // added
 using System.Collections;
 
-public class MeHead : MonoBehaviour {
+public class MeHeadVR : MonoBehaviour {
 	public GameObject MeObject;
-
+	public GameObject CameraParentObject;
+	
 	// Update is called once per frame
 	void Update () {
 		Quaternion head = Cardboard.SDK.HeadRotation;
@@ -20,9 +22,11 @@ public class MeHead : MonoBehaviour {
 			             MeObject.transform.position.y,
 			             MeObject.transform.position.z);
 		// move camera
-		transform.position = 
-			new Vector3 (posX / 2.0f,
-			             transform.position.y,
-			             transform.position.z);
+		if (CameraParentObject != null) {
+			CameraParentObject.transform.position = 
+				new Vector3 (posX / 2.0f,
+				             CameraParentObject.transform.position.y,
+				             CameraParentObject.transform.position.z);
+		}
 	}
 }
