@@ -1,4 +1,4 @@
-﻿// Head Tracking Script for Gear VR
+// Head Tracking Script for Gear VR
 using UnityEngine;
 using UnityEngine.VR; // added
 using System.Collections;
@@ -9,7 +9,7 @@ public class MeHeadVR : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Quaternion head = Cardboard.SDK.HeadRotation;
+		Quaternion head = InputTracking.GetLocalRotation (VRNode.Head); // changed
 		float posX = head.y * 20.0f;
 		if (posX < -Game.MAX_ME_X) {
 			posX = -Game.MAX_ME_X;
